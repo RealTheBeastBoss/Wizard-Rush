@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck6g48rota7aa"]
+
+[ext_resource type="Script" path="res://scenes/menus/settings_menu.gd" id="1_su0cg"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_su0cg")
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.05
+anchor_right = 0.5
+anchor_bottom = 0.05
+grow_horizontal = 2
+theme_type_variation = &"HeaderLarge"
+text = "Settings"
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.5
+offset_top = -95.0
+offset_right = 113.5
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fullscreen" type="CheckBox" parent="Buttons"]
+layout_mode = 2
+focus_mode = 0
+button_pressed = true
+text = "Fullscreen"
+
+[node name="Spacer" type="Control" parent="Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BackButton" type="Button" parent="Buttons"]
+layout_mode = 2
+focus_mode = 0
+text = "Back"
+
+[connection signal="pressed" from="Buttons/Fullscreen" to="." method="_on_fullscreen_pressed"]
+[connection signal="pressed" from="Buttons/BackButton" to="." method="_on_back_button_pressed"]

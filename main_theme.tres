@@ -1,0 +1,64 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cxetlsggwd6y1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4iqq4"]
+bg_color = Color(0, 0.533333, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6fbse"]
+bg_color = Color(0, 0, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hw1ag"]
+bg_color = Color(0, 0, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0rnj"]
+bg_color = Color(0, 0.533333, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[resource]
+default_font_size = 42
+Button/colors/font_color = Color(0, 0, 1, 1)
+Button/colors/font_focus_color = Color(0, 0, 1, 1)
+Button/colors/font_hover_color = Color(0, 0, 1, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 1, 1)
+Button/colors/font_outline_color = Color(1, 0.552941, 0.054902, 1)
+Button/colors/font_pressed_color = Color(0, 0, 1, 1)
+Button/constants/outline_size = 12
+Button/styles/focus = SubResource("StyleBoxFlat_4iqq4")
+Button/styles/hover = SubResource("StyleBoxFlat_6fbse")
+Button/styles/normal = SubResource("StyleBoxFlat_hw1ag")
+Button/styles/pressed = SubResource("StyleBoxFlat_m0rnj")
+HeaderLarge/base_type = &"Label"
+HeaderLarge/colors/font_color = Color(0, 0, 1, 1)
+HeaderLarge/colors/font_outline_color = Color(1, 0.552941, 0.054902, 1)
+HeaderLarge/constants/outline_size = 12
+HeaderLarge/font_sizes/font_size = 69
