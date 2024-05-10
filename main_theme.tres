@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cxetlsggwd6y1"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://cxetlsggwd6y1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4iqq4"]
 bg_color = Color(0, 0.533333, 0, 1)
@@ -44,6 +44,50 @@ expand_margin_top = 5.0
 expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11jpo"]
+bg_color = Color(0, 0, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.552941, 0.054902, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6foqa"]
+bg_color = Color(0, 0, 0.329412, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.552941, 0.054902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8ps3"]
+content_margin_left = 7.0
+content_margin_right = 7.0
+bg_color = Color(0, 0.576471, 0, 1)
+border_width_top = 3
+border_color = Color(0, 0, 1, 1)
+expand_margin_right = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcthl"]
+bg_color = Color(0, 0.733333, 0.152941, 1)
+border_width_top = 3
+border_color = Color(0, 0, 1, 1)
+expand_margin_left = 3.0
+expand_margin_right = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x6yjl"]
+content_margin_left = 7.0
+content_margin_right = 7.0
+bg_color = Color(0, 0.380392, 0, 1)
+border_width_top = 3
+border_color = Color(0, 0, 0.521569, 1)
+expand_margin_right = 3.0
+
 [resource]
 default_font_size = 42
 Button/colors/font_color = Color(0, 0, 1, 1)
@@ -62,3 +106,17 @@ HeaderLarge/colors/font_color = Color(0, 0, 1, 1)
 HeaderLarge/colors/font_outline_color = Color(1, 0.552941, 0.054902, 1)
 HeaderLarge/constants/outline_size = 12
 HeaderLarge/font_sizes/font_size = 69
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_11jpo")
+SignText/base_type = &"Label"
+SignText/font_sizes/font_size = 31
+TabContainer/colors/drop_mark_color = Color(0, 0, 1, 1)
+TabContainer/colors/font_hovered_color = Color(0, 0, 1, 1)
+TabContainer/colors/font_outline_color = Color(1, 0.552941, 0.054902, 1)
+TabContainer/colors/font_selected_color = Color(0, 0, 1, 1)
+TabContainer/colors/font_unselected_color = Color(0, 0, 0.619608, 1)
+TabContainer/constants/outline_size = 6
+TabContainer/styles/panel = SubResource("StyleBoxFlat_6foqa")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_u8ps3")
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_rcthl")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_x6yjl")
+VBoxContainer/constants/separation = 50

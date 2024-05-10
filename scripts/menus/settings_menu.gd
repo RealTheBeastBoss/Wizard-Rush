@@ -1,6 +1,6 @@
 extends Control
 
-@onready var fullscreen = $Buttons/Fullscreen
+@onready var fullscreen = $Settings/Tabs/Video/Fullscreen
 
 func _on_back_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/menus/start_menu.tscn")

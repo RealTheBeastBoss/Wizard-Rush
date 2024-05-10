@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ck6g48rota7aa"]
+[gd_scene load_steps=3 format=3 uid="uid://ck6g48rota7aa"]
 
 [ext_resource type="Script" path="res://scripts/menus/settings_menu.gd" id="1_su0cg"]
+[ext_resource type="Theme" uid="uid://cxetlsggwd6y1" path="res://main_theme.tres" id="2_ckbsf"]
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -20,10 +21,31 @@ anchor_top = 0.05
 anchor_right = 0.5
 anchor_bottom = 0.05
 grow_horizontal = 2
+theme = ExtResource("2_ckbsf")
 theme_type_variation = &"HeaderLarge"
 text = "Settings"
 
-[node name="Buttons" type="VBoxContainer" parent="."]
+[node name="Settings" type="MarginContainer" parent="."]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 66.0
+theme = ExtResource("2_ckbsf")
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 100
+metadata/_edit_lock_ = true
+
+[node name="Tabs" type="TabContainer" parent="Settings"]
+layout_mode = 2
+theme = ExtResource("2_ckbsf")
+tab_focus_mode = 0
+
+[node name="Video" type="TabBar" parent="Settings/Tabs"]
+layout_mode = 2
+
+[node name="Fullscreen" type="CheckBox" parent="Settings/Tabs/Video"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -31,26 +53,38 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -113.5
-offset_top = -95.0
+offset_top = -29.0
 offset_right = 113.5
-offset_bottom = 95.0
+offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Fullscreen" type="CheckBox" parent="Buttons"]
-layout_mode = 2
 focus_mode = 0
 button_pressed = true
 text = "Fullscreen"
 
-[node name="Spacer" type="Control" parent="Buttons"]
+[node name="Audio" type="TabBar" parent="Settings/Tabs"]
+visible = false
 layout_mode = 2
-size_flags_vertical = 3
 
-[node name="BackButton" type="Button" parent="Buttons"]
+[node name="Controls" type="TabBar" parent="Settings/Tabs"]
+visible = false
 layout_mode = 2
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -113.5
+offset_top = -79.0
+offset_right = 113.5
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
 focus_mode = 0
+theme = ExtResource("2_ckbsf")
 text = "Back"
 
-[connection signal="pressed" from="Buttons/Fullscreen" to="." method="_on_fullscreen_pressed"]
-[connection signal="pressed" from="Buttons/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Settings/Tabs/Video/Fullscreen" to="." method="_on_fullscreen_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

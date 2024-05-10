@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0qm6pj5ncnog"]
+
+[ext_resource type="Theme" uid="uid://cxetlsggwd6y1" path="res://main_theme.tres" id="1_6k8vk"]
+
+[node name="LevelUI" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("1_6k8vk")
+theme_type_variation = &"HeaderLarge"
+text = "Current Score:"

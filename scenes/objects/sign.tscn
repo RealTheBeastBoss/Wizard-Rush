@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://yth7neur4wvn"]
+
+[ext_resource type="Texture2D" uid="uid://bbxjx5t5jiiik" path="res://tilesets/world_tileset.png" id="1_mc1pw"]
+[ext_resource type="Script" path="res://scripts/objects/sign.gd" id="1_xamda"]
+[ext_resource type="Theme" uid="uid://cxetlsggwd6y1" path="res://main_theme.tres" id="3_7q7eg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ysbsa"]
+radius = 72.0
+
+[node name="Sign" type="Node2D"]
+script = ExtResource("1_xamda")
+
+[node name="Texture" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_mc1pw")
+region_enabled = true
+region_rect = Rect2(128, 48, 16, 16)
+
+[node name="InterationArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterationArea"]
+shape = SubResource("CircleShape2D_ysbsa")
+
+[node name="SignPanel" type="PanelContainer" parent="."]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -80.0
+offset_right = 20.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_7q7eg")
+
+[node name="SignMargin" type="MarginContainer" parent="SignPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="SignText" type="Label" parent="SignPanel/SignMargin"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme = ExtResource("3_7q7eg")
+theme_type_variation = &"SignText"
+horizontal_alignment = 1
+autowrap_mode = 2
