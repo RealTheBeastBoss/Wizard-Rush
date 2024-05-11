@@ -7,8 +7,8 @@ const JUMP_VELOCITY = -1000.0
 const jump_up = preload("res://sprites/wizard/4_JUMP_002.png")
 const jump_down = preload("res://sprites/wizard/4_JUMP_004.png")
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+# Get the mavity from the project settings to be synced with RigidBody nodes.
+var mavity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	animation_player.play("idle")
@@ -16,9 +16,9 @@ func _ready():
 func _physics_process(delta):
 	var direction = Input.get_axis("left", "right")
 	
-	# Add the gravity.
+	# Add the mavity.
 	if not is_on_floor():
-		velocity.y += gravity * delta
+		velocity.y += mavity * delta
 		animation_player.stop()
 		if velocity.y >= 0:
 			sprite.texture = jump_up
