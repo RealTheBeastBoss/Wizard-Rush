@@ -12,7 +12,7 @@ func _ready():
 	var random = RandomNumberGenerator.new()
 	random.randomize()
 	sprite.visible = false
-	timer.wait_time = randi_range(2, 4)
+	timer.wait_time = randi_range(1, 3)
 	timer.start()
 
 func _physics_process(delta):

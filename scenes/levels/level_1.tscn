@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b326spli1j732"]
+[gd_scene load_steps=10 format=3 uid="uid://b326spli1j732"]
 
 [ext_resource type="PackedScene" uid="uid://h2w3q1l0mbco" path="res://scenes/entities/player.tscn" id="1_bo25o"]
 [ext_resource type="Texture2D" uid="uid://bbxjx5t5jiiik" path="res://tilesets/world_tileset.png" id="2_e1pm6"]
 [ext_resource type="PackedScene" uid="uid://yth7neur4wvn" path="res://scenes/objects/sign.tscn" id="3_g084u"]
 [ext_resource type="PackedScene" uid="uid://c0qm6pj5ncnog" path="res://scenes/levels/level_ui.tscn" id="4_wltkv"]
 [ext_resource type="PackedScene" uid="uid://dsl1wkrlseyoy" path="res://scenes/objects/lava_bubble.tscn" id="5_v14jy"]
+[ext_resource type="PackedScene" uid="uid://cfcuxv3xvfe1t" path="res://scenes/objects/mana.tscn" id="6_oiuc1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h40d8"]
 texture = ExtResource("2_e1pm6")
@@ -440,24 +441,38 @@ rotation = 1.5708
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_tjff5")
 
-[node name="Sign" parent="." instance=ExtResource("3_g084u")]
+[node name="LevelUI" parent="." instance=ExtResource("4_wltkv")]
+
+[node name="Mana" type="Node2D" parent="."]
+position = Vector2(736, 1056)
+scale = Vector2(4, 4)
+
+[node name="Mana" parent="Mana" instance=ExtResource("6_oiuc1")]
+position = Vector2(208, 32)
+scale = Vector2(1, 1)
+mana = 2
+
+[node name="Mana1" parent="Mana" instance=ExtResource("6_oiuc1")]
+scale = Vector2(1, 1)
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Sign" parent="Objects" instance=ExtResource("3_g084u")]
 position = Vector2(416, 1184)
 display_text = "Hurry! The people need you"
 panel_width = 300
 
-[node name="Sign2" parent="." instance=ExtResource("3_g084u")]
+[node name="Sign2" parent="Objects" instance=ExtResource("3_g084u")]
 position = Vector2(1248, 1248)
 display_text = "Don't worry, this bridge shouldn't burn down"
 panel_width = 400
 
-[node name="LevelUI" parent="." instance=ExtResource("4_wltkv")]
-
-[node name="LavaBubble" parent="." instance=ExtResource("5_v14jy")]
+[node name="LavaBubble" parent="Objects" instance=ExtResource("5_v14jy")]
 z_index = -1
 position = Vector2(1504, 1376)
 speed = 2
 
-[node name="LavaBubble2" parent="." instance=ExtResource("5_v14jy")]
+[node name="LavaBubble2" parent="Objects" instance=ExtResource("5_v14jy")]
 z_index = -1
 position = Vector2(1632, 1376)
 speed = 2

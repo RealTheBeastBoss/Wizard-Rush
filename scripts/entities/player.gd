@@ -8,6 +8,7 @@ const JUMP_VELOCITY = -1000.0
 @onready var sprite = $Sprite
 @onready var spell_pos = $SpellPosition
 @onready var hit_cooldown = $HitCooldown
+@onready var death_wait = $DeathWait
 const jump_up = preload("res://sprites/wizard/4_JUMP_002.png")
 const dead = preload("res://sprites/wizard/7_DIE_011.png")
 const jump_down = preload("res://sprites/wizard/4_JUMP_004.png")
@@ -39,6 +40,7 @@ func finish_shooting():
 	is_shooting = false
 
 func _physics_process(delta):
+	velocity.y += mavity * delta
 	if is_dead:
 		animation_player.stop()
 		sprite.texture = dead
@@ -51,17 +53,14 @@ func _physics_process(delta):
 
 	var direction = Input.get_axis("left", "right")
 
-	# Add the mavity.
-	if not is_on_floor():
-		velocity.y += mavity * delta
-		if not is_shooting:
+	if not is_shooting:
+		if not is_on_floor():
 			animation_player.stop()
 			if velocity.y >= 0:
 				sprite.texture = jump_up
 			else:
 				sprite.texture = jump_down
-	else:
-		if not is_shooting:
+		else:
 			if direction:
 				animation_player.play("run")
 			else:
@@ -88,6 +87,9 @@ func damage_player():
 	if not in_iframes:
 		if GameManager.current_health == 0:
 			animation_player.play("die")
+			velocity.x = 0
+			if death_wait.time_left == 0:
+				death_wait.start()
 		else:
 			GameManager.current_health -= 1
 			in_iframes = true
@@ -95,3 +97,6 @@ func damage_player():
 
 func _on_hit_cooldown_timeout():
 	in_iframes = false
+
+func _on_death_wait_timeout():
+	GameManager.transition_scene("res://scenes/menus/start_menu.tscn")

@@ -16,11 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://18kp2657m8av" path="res://sprites/wizard/5_ATTACK_004.png" id="14_qliml"]
 [ext_resource type="Texture2D" uid="uid://bdhn2x4wrwcre" path="res://sprites/wizard/5_ATTACK_005.png" id="15_bropr"]
 [ext_resource type="Texture2D" uid="uid://ctapvpm0jvcxv" path="res://sprites/wizard/5_ATTACK_006.png" id="16_gul4q"]
-[ext_resource type="Texture2D" uid="uid://cocqgg0pu3lb1" path="res://sprites/wizard/6_HURT_000.png" id="17_blaxh"]
-[ext_resource type="Texture2D" uid="uid://dnjy1k1v381xu" path="res://sprites/wizard/6_HURT_001.png" id="18_7gqtq"]
-[ext_resource type="Texture2D" uid="uid://bs04nsiffpghx" path="res://sprites/wizard/6_HURT_002.png" id="19_8d2ht"]
-[ext_resource type="Texture2D" uid="uid://c8ovnm2glnt7y" path="res://sprites/wizard/6_HURT_003.png" id="20_25gb2"]
-[ext_resource type="Texture2D" uid="uid://bpmirfdoenrp3" path="res://sprites/wizard/6_HURT_004.png" id="21_xrb1s"]
 [ext_resource type="Texture2D" uid="uid://bvwlqyginc3dl" path="res://sprites/wizard/7_DIE_000.png" id="22_bctis"]
 [ext_resource type="Texture2D" uid="uid://dhoj0ahq6wn12" path="res://sprites/wizard/7_DIE_004.png" id="23_q8mtr"]
 [ext_resource type="Texture2D" uid="uid://h27morebbg6m" path="res://sprites/wizard/7_DIE_006.png" id="24_vdgfv"]
@@ -153,6 +148,21 @@ tracks/2/keys = {
 "values": [true]
 }
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q0cye"]
+load_path = "res://.godot/imported/6_HURT_000.png-e87c8ce0a1d7b94473736adbf4876831.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mf6la"]
+load_path = "res://.godot/imported/6_HURT_001.png-3724b2d4ca7fceee5efa7161ac3196b0.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u046s"]
+load_path = "res://.godot/imported/6_HURT_002.png-d10464e65e63fbaf5f549c61118a0113.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mo052"]
+load_path = "res://.godot/imported/6_HURT_003.png-8bca9e3c64ea459da8085aa80bb88c50.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i7vr1"]
+load_path = "res://.godot/imported/6_HURT_004.png-6dd0775f3d473ffa4c5224a096ed8f59.ctex"
+
 [sub_resource type="Animation" id="Animation_h3d7s"]
 resource_name = "hurt"
 length = 0.5
@@ -166,7 +176,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("17_blaxh"), ExtResource("18_7gqtq"), ExtResource("19_8d2ht"), ExtResource("20_25gb2"), ExtResource("21_xrb1s")]
+"values": [SubResource("CompressedTexture2D_q0cye"), SubResource("CompressedTexture2D_mf6la"), SubResource("CompressedTexture2D_u046s"), SubResource("CompressedTexture2D_mo052"), SubResource("CompressedTexture2D_i7vr1")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -282,4 +292,9 @@ position = Vector2(53, 13)
 wait_time = 2.0
 one_shot = true
 
+[node name="DeathWait" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="timeout" from="HitCooldown" to="." method="_on_hit_cooldown_timeout"]
+[connection signal="timeout" from="DeathWait" to="." method="_on_death_wait_timeout"]
