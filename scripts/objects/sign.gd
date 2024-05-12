@@ -11,8 +11,10 @@ func _ready():
 	sign_panel.set_custom_minimum_size(Vector2(panel_width, 0))
 
 func _process(delta):
-	var bodies = interation_area.get_overlapping_bodies()
-	for body in bodies:
-		if body.z_index == 1 and Input.is_action_just_pressed("interact"):
-			sign_text.text = display_text
-			sign_panel.visible = true
+	if not sign_panel.visible:
+		var bodies = interation_area.get_overlapping_bodies()
+		for body in bodies:
+			if body is Player and Input.is_action_just_pressed("interact"):
+				sign_text.text = display_text
+				sign_panel.visible = true
+				GameManager.signs_read += 1

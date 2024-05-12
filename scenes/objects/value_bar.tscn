@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://dy6nydyu840n8"]
+
+[ext_resource type="Texture2D" uid="uid://cldxilrkdjc2r" path="res://sprites/ui/value bar/mana_bar.png" id="1_1e2u1"]
+[ext_resource type="Texture2D" uid="uid://dyxa1sp1u1htq" path="res://sprites/ui/value bar/mana_bar_empty.png" id="1_5jecs"]
+[ext_resource type="Script" path="res://scripts/objects/value_bar.gd" id="1_wefle"]
+[ext_resource type="Texture2D" uid="uid://w6pe02f15ldf" path="res://sprites/objects/mana.png" id="2_ls00l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kwabp"]
+font_size = 32
+
+[node name="ValueBar" type="TextureProgressBar"]
+offset_right = 459.0
+offset_bottom = 134.0
+max_value = 20.0
+texture_under = ExtResource("1_5jecs")
+texture_progress = ExtResource("1_1e2u1")
+texture_progress_offset = Vector2(118, 24)
+script = ExtResource("1_wefle")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 16.0
+offset_top = 27.0
+offset_right = 118.0
+offset_bottom = 105.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_ls00l")
+stretch_mode = 5
+
+[node name="Value" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.5
+offset_top = 18.0
+offset_right = 228.5
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_kwabp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]

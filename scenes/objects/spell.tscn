@@ -1,0 +1,157 @@
+[gd_scene load_steps=34 format=3 uid="uid://ck0h0ydj17253"]
+
+[ext_resource type="Script" path="res://scripts/objects/spell.gd" id="1_2sx3c"]
+[ext_resource type="Texture2D" uid="uid://dasqwgid4cdkm" path="res://sprites/spells/basic/1_0.png" id="1_hvolm"]
+[ext_resource type="Texture2D" uid="uid://b4geebih725g" path="res://sprites/spells/basic/1_1.png" id="2_hbre0"]
+[ext_resource type="Texture2D" uid="uid://dns7idrifh4rf" path="res://sprites/spells/basic/1_2.png" id="3_cweh6"]
+[ext_resource type="Texture2D" uid="uid://dn7jtaajga5eu" path="res://sprites/spells/basic/1_3.png" id="4_7tjwe"]
+[ext_resource type="Texture2D" uid="uid://cneqmee7txmql" path="res://sprites/spells/basic/1_4.png" id="5_hbryu"]
+[ext_resource type="Texture2D" uid="uid://cgv1fhxeytein" path="res://sprites/spells/basic/1_5.png" id="6_h51vk"]
+[ext_resource type="Texture2D" uid="uid://2tr4gpc3s6o5" path="res://sprites/spells/basic/1_6.png" id="7_lybmj"]
+[ext_resource type="Texture2D" uid="uid://dwgl2afe7157e" path="res://sprites/spells/basic/1_7.png" id="8_votqj"]
+[ext_resource type="Texture2D" uid="uid://da1f0lhpq38t4" path="res://sprites/spells/basic/1_8.png" id="9_8hjs4"]
+[ext_resource type="Texture2D" uid="uid://d26n0omf8mt4e" path="res://sprites/spells/basic/1_9.png" id="10_trenb"]
+[ext_resource type="Texture2D" uid="uid://xoeqhxnknhiq" path="res://sprites/spells/basic/1_10.png" id="11_nxa2a"]
+[ext_resource type="Texture2D" uid="uid://dp11qwyqfrqfb" path="res://sprites/spells/basic/1_11.png" id="12_8apc3"]
+[ext_resource type="Texture2D" uid="uid://cq8wwxbqn0e3l" path="res://sprites/spells/basic/1_12.png" id="13_lms7g"]
+[ext_resource type="Texture2D" uid="uid://chwtjgh731c6p" path="res://sprites/spells/basic/1_13.png" id="14_rgbcw"]
+[ext_resource type="Texture2D" uid="uid://duy28exjd5h6h" path="res://sprites/spells/basic/1_14.png" id="15_haimp"]
+[ext_resource type="Texture2D" uid="uid://ckb5j8y5i6a86" path="res://sprites/spells/basic/1_15.png" id="16_36jhi"]
+[ext_resource type="Texture2D" uid="uid://bpakmgpksnv5d" path="res://sprites/spells/basic/1_16.png" id="17_aw7sv"]
+[ext_resource type="Texture2D" uid="uid://ty0xrr0brwr8" path="res://sprites/spells/basic/1_17.png" id="18_248xr"]
+[ext_resource type="Texture2D" uid="uid://bxhiq3fgetrs4" path="res://sprites/spells/basic/1_18.png" id="19_1sanp"]
+[ext_resource type="Texture2D" uid="uid://smunba5hayb7" path="res://sprites/spells/basic/1_19.png" id="20_ilhvd"]
+[ext_resource type="Texture2D" uid="uid://cnravcd3snqvs" path="res://sprites/spells/basic/1_20.png" id="21_58tob"]
+[ext_resource type="Texture2D" uid="uid://b34cy7ve02gqy" path="res://sprites/spells/basic/1_21.png" id="22_d5sar"]
+[ext_resource type="Texture2D" uid="uid://2jyyetj1bknc" path="res://sprites/spells/basic/1_22.png" id="23_2s63a"]
+[ext_resource type="Texture2D" uid="uid://bn7nxtish76qy" path="res://sprites/spells/basic/1_23.png" id="24_gnsgi"]
+[ext_resource type="Texture2D" uid="uid://rbwkgq17m1pe" path="res://sprites/spells/basic/1_24.png" id="25_evwyb"]
+[ext_resource type="Texture2D" uid="uid://bvormmldq5ffv" path="res://sprites/spells/basic/1_25.png" id="26_xfac0"]
+[ext_resource type="Texture2D" uid="uid://bkmgnaokeaaaa" path="res://sprites/spells/basic/1_26.png" id="27_oyobh"]
+[ext_resource type="Texture2D" uid="uid://ddyr5sp7m1c7l" path="res://sprites/spells/basic/1_27.png" id="28_kl363"]
+[ext_resource type="Texture2D" uid="uid://d3hxpuscvmx4x" path="res://sprites/spells/basic/1_28.png" id="29_8bxf4"]
+[ext_resource type="Texture2D" uid="uid://dvevcfi7gsy0x" path="res://sprites/spells/basic/1_29.png" id="30_p8coj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xkesr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hvolm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hbre0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cweh6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7tjwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hbryu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_h51vk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lybmj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_votqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8hjs4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_trenb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_nxa2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8apc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_lms7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_rgbcw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_haimp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_36jhi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_aw7sv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_248xr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_1sanp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ilhvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_58tob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_d5sar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_2s63a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_gnsgi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_evwyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_xfac0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_oyobh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_kl363")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_8bxf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_p8coj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fvc8"]
+size = Vector2(15, 14)
+
+[node name="Spell" type="Node2D"]
+z_index = 2
+script = ExtResource("1_2sx3c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xkesr")
+autoplay = "default"
+frame = 17
+frame_progress = 0.739839
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(18.5, 2)
+shape = SubResource("RectangleShape2D_5fvc8")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1, 2.5)
+scale = Vector2(2.5, 1.15)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_spell_screen_exited"]
