@@ -149,19 +149,14 @@ tracks/2/keys = {
 }
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q0cye"]
-load_path = "res://.godot/imported/6_HURT_000.png-e87c8ce0a1d7b94473736adbf4876831.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mf6la"]
-load_path = "res://.godot/imported/6_HURT_001.png-3724b2d4ca7fceee5efa7161ac3196b0.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u046s"]
-load_path = "res://.godot/imported/6_HURT_002.png-d10464e65e63fbaf5f549c61118a0113.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mo052"]
-load_path = "res://.godot/imported/6_HURT_003.png-8bca9e3c64ea459da8085aa80bb88c50.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i7vr1"]
-load_path = "res://.godot/imported/6_HURT_004.png-6dd0775f3d473ffa4c5224a096ed8f59.ctex"
 
 [sub_resource type="Animation" id="Animation_h3d7s"]
 resource_name = "hurt"

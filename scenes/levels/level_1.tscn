@@ -470,7 +470,6 @@ panel_width = 400
 [node name="LavaBubble" parent="Objects" instance=ExtResource("5_v14jy")]
 z_index = -1
 position = Vector2(1504, 1376)
-speed = 2
 
 [node name="LavaBubble2" parent="Objects" instance=ExtResource("5_v14jy")]
 z_index = -1

@@ -12,6 +12,7 @@ offset_left = 8.0
 offset_top = 104.0
 offset_right = 467.0
 offset_bottom = 238.0
+label_text = "Mana"
 
 [node name="Heart" type="Sprite2D" parent="."]
 position = Vector2(75, 48)

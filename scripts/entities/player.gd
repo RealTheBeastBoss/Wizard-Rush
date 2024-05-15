@@ -2,13 +2,14 @@ class_name Player
 extends CharacterBody2D
 
 const SPEED = 800.0
-const JUMP_VELOCITY = -1000.0
+const JUMP_VELOCITY = -900.0
 @export var is_dead = false
 @onready var animation_player = $AnimationPlayer
 @onready var sprite = $Sprite
 @onready var spell_pos = $SpellPosition
 @onready var hit_cooldown = $HitCooldown
 @onready var death_wait = $DeathWait
+const damage_shader = preload("res://shaders/damage.gdshader")
 const jump_up = preload("res://sprites/wizard/4_JUMP_002.png")
 const dead = preload("res://sprites/wizard/7_DIE_011.png")
 const jump_down = preload("res://sprites/wizard/4_JUMP_004.png")
@@ -16,6 +17,7 @@ var spell_scene = preload("res://scenes/objects/spell.tscn")
 var is_shooting = false
 var flip_spell = false
 var in_iframes = false
+var flash_timer = 20
 
 # Get the mavity from the project settings to be synced with RigidBody nodes.
 var mavity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -24,6 +26,7 @@ func _ready():
 	animation_player.play("idle")
 	is_dead = false
 	GameManager.damaged_player.connect(damage_player)
+	sprite.material = ShaderMaterial.new()
 
 func cast_spell():
 	var spell = spell_scene.instantiate()
@@ -44,14 +47,31 @@ func _physics_process(delta):
 	if is_dead:
 		animation_player.stop()
 		sprite.texture = dead
+		move_and_slide()
 		return
 	elif animation_player.current_animation == "die":
+		move_and_slide()
 		return
 	if not is_shooting and Input.is_action_just_pressed("shoot"):
 		is_shooting = true
 		animation_player.play("attack")
 
 	var direction = Input.get_axis("left", "right")
+	
+	if in_iframes:
+		if flash_timer == 20:
+			sprite.material.shader = damage_shader
+			flash_timer -= 1
+		elif flash_timer == 0:
+			sprite.material.shader = null
+			flash_timer -= 1
+		elif flash_timer == -19:
+			flash_timer = 20
+		else:
+			flash_timer -= 1
+	elif sprite.material.shader == damage_shader:
+		sprite.material.shader = null
+		flash_timer = 20
 
 	if not is_shooting:
 		if not is_on_floor():
